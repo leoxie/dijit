@@ -135,7 +135,7 @@ define([
 				var self = this;
 				this._lastQuery = value;
 				when(this.store.get(value), function(item){
-					self._callbackSetLabel(item? [item] : [], undefined, undefined, priorityChange);
+					self._callbackSetLabel(item? (lang.isArray(item)? item : [item]):[], undefined, undefined, priorityChange);
 				});
 			}else{
 				this.valueNode.value = value;
